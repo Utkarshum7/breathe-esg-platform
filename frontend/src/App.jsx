@@ -1,0 +1,127 @@
+import React, { useState } from 'react';
+import DashboardPage from './pages/DashboardPage';
+import UploadPage from './pages/UploadPage';
+import RecordsPage from './pages/RecordsPage';
+
+function App() {
+  // Simple, ultra-stable state-based router
+  const [view, setView] = useState({ name: 'dashboard', params: {} });
+
+  const renderActiveView = () => {
+    switch (view.name) {
+      case 'dashboard':
+        return <DashboardPage setView={setView} />;
+      case 'upload':
+        return <UploadPage setView={setView} />;
+      case 'records':
+        return <RecordsPage initialFilters={view.params} key={JSON.stringify(view.params)} />;
+      default:
+        return <DashboardPage setView={setView} />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex font-sans antialiased selection:bg-brand-500/30 selection:text-brand-300">
+      
+      {/* Sidebar Navigation */}
+      <aside className="w-[260px] bg-slate-900 border-r border-slate-800/80 flex flex-col justify-between p-6 select-none shrink-0">
+        
+        {/* Brand Banner */}
+        <div className="flex flex-col gap-8">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-brand-500/10 border border-brand-500/20 text-brand-400 rounded-xl shadow-[0_0_15px_#2ebb7220]">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-white text-base tracking-tight font-sans">
+                Breathe ESG
+              </span>
+              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest leading-none">
+                Data Platform
+              </span>
+            </div>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col gap-1.5">
+            {/* Dashboard Link */}
+            <button
+              onClick={() => setView({ name: 'dashboard', params: {} })}
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-black uppercase tracking-wider text-left transition-all duration-300 focus:outline-none ${
+                view.name === 'dashboard'
+                  ? 'bg-brand-500/10 border border-brand-500/20 text-brand-400 shadow-[0_4px_15px_#2ebb720c]'
+                  : 'border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
+              }`}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" />
+              </svg>
+              Dashboard
+            </button>
+
+            {/* Upload Ingest Link */}
+            <button
+              onClick={() => setView({ name: 'upload', params: {} })}
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-black uppercase tracking-wider text-left transition-all duration-300 focus:outline-none ${
+                view.name === 'upload'
+                  ? 'bg-brand-500/10 border border-brand-500/20 text-brand-400 shadow-[0_4px_15px_#2ebb720c]'
+                  : 'border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
+              }`}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              Upload Center
+            </button>
+
+            {/* Ingestion Ledger Link */}
+            <button
+              onClick={() => setView({ name: 'records', params: {} })}
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-black uppercase tracking-wider text-left transition-all duration-300 focus:outline-none ${
+                view.name === 'records'
+                  ? 'bg-brand-500/10 border border-brand-500/20 text-brand-400 shadow-[0_4px_15px_#2ebb720c]'
+                  : 'border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
+              }`}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+              Review Ledger
+            </button>
+          </nav>
+        </div>
+
+        {/* Footer Details */}
+        <div className="flex flex-col gap-4 border-t border-slate-800/60 pt-6">
+          <div className="flex flex-col gap-1">
+            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+              Analyst Attribution
+            </span>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
+              <span className="text-xs font-bold text-slate-300">
+                Lead ESG Auditor
+              </span>
+            </div>
+          </div>
+          
+          <div className="p-3 bg-slate-950/50 border border-slate-800 rounded-lg text-[10px] text-slate-500 leading-relaxed font-mono">
+            System Check: <span className="text-brand-400">0 Issues</span><br />
+            Database: <span className="text-slate-300">Default SQLite</span>
+          </div>
+        </div>
+
+      </aside>
+
+      {/* Main Core Content Panel */}
+      <main className="flex-1 p-8 overflow-y-auto max-w-7xl mx-auto w-full">
+        {renderActiveView()}
+      </main>
+
+    </div>
+  );
+}
+
+export default App;

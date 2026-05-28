@@ -1,0 +1,41 @@
+# render.yaml — Render Infrastructure as Code (IaC) for Breathe ESG
+#
+# This file is the single-click deployment spec for Render.
+# Commit it to the repo root, then connect the repo in the Render dashboard.
+# Render will auto-discover this file and provision all services automatically.
+
+services:
+  # ─────────────────────────────────────────────────────────
+  # Django REST API — Web Service
+  # ─────────────────────────────────────────────────────────
+  - type: web
+    name: breathe-esg-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    healthCheckPath: /api/
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true          # Render auto-generates a cryptographic secret
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "breathe-esg-api.onrender.com"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: breathe-esg-db
+          property: connectionString
+      - key: CORS_ALLOW_ALL_ORIGINS
+        value: "False"
+      - key: CORS_ALLOWED_ORIGINS
+        value: "https://breathe-esg.vercel.app"
+
+# ─────────────────────────────────────────────────────────
+# PostgreSQL — Managed Database
+# ─────────────────────────────────────────────────────────
+databases:
+  - name: breathe-esg-db
+    databaseName: breathe_esg
+    user: breathe_esg_user
+    plan: free

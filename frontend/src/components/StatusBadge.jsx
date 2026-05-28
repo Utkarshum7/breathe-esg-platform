@@ -1,0 +1,71 @@
+import React from 'react';
+
+/**
+ * StatusBadge Component
+ * Renders a highly visual premium pill badge showing the validation/approval state of records or batches.
+ */
+export const StatusBadge = ({ status }) => {
+  const normStatus = (status || '').trim().toUpperCase();
+
+  let styles = {
+    bg: 'bg-slate-800/80 border-slate-700 text-slate-300',
+    dot: 'bg-slate-400',
+    label: normStatus || 'UNKNOWN',
+  };
+
+  switch (normStatus) {
+    case 'DRAFT':
+      styles = {
+        bg: 'bg-blue-950/40 border-blue-500/30 text-blue-300',
+        dot: 'bg-blue-400 shadow-[0_0_8px_#3b82f6]',
+        label: 'Draft / Unverified',
+      };
+      break;
+    case 'SUSPICIOUS':
+      styles = {
+        bg: 'bg-amber-950/40 border-amber-500/30 text-amber-300 animate-pulse',
+        dot: 'bg-amber-400 shadow-[0_0_8px_#f59e0b]',
+        label: 'Suspicious / Flagged',
+      };
+      break;
+    case 'APPROVED':
+      styles = {
+        bg: 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300',
+        dot: 'bg-emerald-400 shadow-[0_0_8px_#10b981]',
+        label: 'Approved & Locked',
+      };
+      break;
+    case 'FAILED':
+      styles = {
+        bg: 'bg-rose-950/40 border-rose-500/30 text-rose-300',
+        dot: 'bg-rose-500 shadow-[0_0_8px_#ef4444]',
+        label: 'Failed Ingest',
+      };
+      break;
+    case 'COMPLETED':
+      styles = {
+        bg: 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300',
+        dot: 'bg-emerald-400 shadow-[0_0_8px_#10b981]',
+        label: 'Completed',
+      };
+      break;
+    case 'PROCESSING':
+      styles = {
+        bg: 'bg-indigo-950/40 border-indigo-500/30 text-indigo-300 animate-pulse',
+        dot: 'bg-indigo-400 shadow-[0_0_8px_#6366f1]',
+        label: 'Processing',
+      };
+      break;
+  }
+
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full border ${styles.bg} transition-all duration-300`}
+    >
+      <span className={`w-2 h-2 rounded-full ${styles.dot}`} />
+      <span className="tracking-wide">{styles.label}</span>
+    </span>
+  );
+};
+
+export default StatusBadge;

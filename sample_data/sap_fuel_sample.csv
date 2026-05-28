@@ -1,0 +1,7 @@
+Werk;Buchungsdatum;Material;Materialkurztext;Menge;Einheit;Nettopreis
+DE01;28.05.2026;DSL;Diesel Fuel;1.200,50;L;1500,00
+DE01;27.05.2026;GAS;Natural Gas;500,00;M3;600,00
+DE01;01.01.2020;DSL;Old Diesel Fuel;100,00;L;120,00
+DE02;26.05.2026;DSL;Negative Fuel;-100,00;L;-120,00
+DE01;25.05.2026;DSL;Invalid Unit Fuel;250,00;XYZ;300,00
+DE01;24.05.2026;DSL;Outlier Fuel;50.000,00;L;62500,00

@@ -1,0 +1,98 @@
+[
+  {
+    "trip_id": "T001",
+    "travel_mode": "FLIGHT",
+    "origin": "LHR",
+    "destination": "AMS",
+    "distance_km": 370.0,
+    "travel_date": "2026-05-15",
+    "employee_id": "EMP001",
+    "class": "ECONOMY",
+    "cost_usd": 150.00,
+    "booking_date": "2026-05-01"
+  },
+  {
+    "trip_id": "T002",
+    "travel_mode": "FLIGHT",
+    "origin": "LHR",
+    "destination": "JFK",
+    "distance_km": null,
+    "travel_date": "2026-05-16",
+    "employee_id": "EMP001",
+    "class": "BUSINESS",
+    "cost_usd": 2500.00,
+    "booking_date": "2026-05-01"
+  },
+  {
+    "trip_id": "T003",
+    "travel_mode": "RAIL",
+    "origin": "LON",
+    "destination": "PAR",
+    "distance_km": 490.0,
+    "travel_date": "2026-05-17",
+    "employee_id": "EMP002",
+    "class": "STANDARD",
+    "cost_usd": 80.00,
+    "booking_date": "2026-05-02"
+  },
+  {
+    "trip_id": "T004",
+    "travel_mode": "FLIGHT",
+    "origin": "XYZ",
+    "destination": "ABC",
+    "distance_km": null,
+    "travel_date": "2026-05-18",
+    "employee_id": "EMP001",
+    "class": "ECONOMY",
+    "cost_usd": 300.00,
+    "booking_date": "2026-05-03"
+  },
+  {
+    "trip_id": "T005",
+    "travel_mode": "FLIGHT",
+    "origin": "LHR",
+    "destination": "AMS",
+    "distance_km": -50.0,
+    "travel_date": "2026-05-19",
+    "employee_id": "EMP001",
+    "class": "ECONOMY",
+    "cost_usd": 100.00,
+    "booking_date": "2026-05-04"
+  },
+  {
+    "trip_id": "T006",
+    "travel_mode": "RAIL",
+    "origin": "LON",
+    "destination": "PAR",
+    "distance_km": null,
+    "travel_date": "2026-05-20",
+    "employee_id": "EMP002",
+    "class": "STANDARD",
+    "cost_usd": 80.00,
+    "booking_date": "2026-05-05"
+  },
+  {
+    "trip_id": "T007",
+    "travel_mode": "FLIGHT",
+    "origin": "LHR",
+    "destination": "SYD",
+    "distance_km": 25000.0,
+    "travel_date": "2026-05-21",
+    "employee_id": "EMP001",
+    "class": "FIRST",
+    "cost_usd": 8000.00,
+    "booking_date": "2026-05-06"
+  },
+  {
+    "trip_id": "T008",
+    "travel_mode": "SPACESHIP",
+    "origin": "EARTH",
+    "destination": "MARS",
+    "distance_km": 54600000.0,
+    "travel_date": "2026-05-22",
+    "employee_id": "EMP003",
+    "class": "FIRST",
+    "cost_usd": 10000000.00,
+    "booking_date": "2026-05-07"
+  }
+]
