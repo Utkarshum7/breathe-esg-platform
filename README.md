@@ -210,12 +210,11 @@ Then upload the sample files from `sample_data/` in the Upload Center.
 3. Connect the GitHub repository
 4. Render auto-reads `render.yaml` — review the plan and click **Apply**
 5. Wait ~3 minutes for the build to complete
-6. In the Render dashboard, open the web service shell and run:
+6. Database migrations will run automatically on the database during the release phase. To create an administrator account, open the web service **Shell** tab in the Render dashboard and run:
    ```bash
-   python manage.py migrate
    python manage.py createsuperuser
    ```
-7. Note your service URL (e.g. `https://breathe-esg-api.onrender.com`)
+7. Note your service URL (e.g. `https://breathe-esg-api-xxxx.onrender.com`)
 
 **Required environment variables** (set in Render dashboard if not using Blueprint):
 
