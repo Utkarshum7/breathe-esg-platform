@@ -213,21 +213,29 @@ To test the ingestion and analyst flow locally or in production:
 
 ---
 
-## 🖼️ Screenshots Section
+## 🖼️ Application Screenshots
 
-Below are placeholders representing key pages of the Breathe ESG platform. Add screenshots here after hosting:
+### Dashboard Overview
 
-### ESG Command Dashboard
-![ESG Command Dashboard](https://drive.google.com/file/d/1dbh9htWJIIREx-XyGFuWcdgpqv5xE43X/view?usp=sharing)
-*Overview of carbon footprints, total metric tonnes, batch success rates, and outstanding reviews.*
+![Dashboard](docs/images/dashboard.png)
 
-### Ingestion & Upload Center
-![Upload Center](https://drive.google.com/file/d/1Jq0a-9z47GHKl3zWSIUoBj1Hv7gXDT0W/view?usp=sharing)
-*Drag-and-drop file interface for batch submissions mapped to specific organization adapters.*
+*Real-time overview of ESG metrics, emission summaries, approval status, and ingestion statistics.*
 
-### Ledger & Auditing View
-![Review Ledger](https://drive.google.com/file/d/18H9araG1hWKcw-WWWNzCLfrGgWDC5LmS/view?usp=sharing)
-*Interactive table detailing raw versus normalized $tCO_2e$, flags for suspicious values, and historical ranges.*
+---
+
+### Data Upload Center
+
+![Upload Center](docs/images/upload-center.png)
+
+*Upload CSV and JSON datasets through a streamlined ingestion workflow with validation and processing status tracking.*
+
+---
+
+### Audit & Review Workflow
+
+![Audit Ledger](docs/images/audit-ledger.png)
+
+*Review, approve, and track emission records with audit history and anomaly detection insights.*
 
 ---
 
