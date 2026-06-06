@@ -1,9 +1,6 @@
 # Breathe ESG – ESG Data Ingestion & Audit Platform
 
-> **Breathe ESG Internship Assignment**  
-> A production-ready, full-stack enterprise platform designed to ingest corporate greenhouse gas (GHG) emission data from heterogeneous sources, normalize it to standardized CO₂ equivalents (CO2e), and guide analysts through an immutable audit and review workflow.
 
----
 
 ## 📋 Project Overview
 
@@ -221,15 +218,15 @@ To test the ingestion and analyst flow locally or in production:
 Below are placeholders representing key pages of the Breathe ESG platform. Add screenshots here after hosting:
 
 ### ESG Command Dashboard
-![ESG Command Dashboard](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80)
+![ESG Command Dashboard](https://drive.google.com/file/d/1dbh9htWJIIREx-XyGFuWcdgpqv5xE43X/view?usp=sharing)
 *Overview of carbon footprints, total metric tonnes, batch success rates, and outstanding reviews.*
 
 ### Ingestion & Upload Center
-![Upload Center](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80)
+![Upload Center](https://drive.google.com/file/d/1Jq0a-9z47GHKl3zWSIUoBj1Hv7gXDT0W/view?usp=sharing)
 *Drag-and-drop file interface for batch submissions mapped to specific organization adapters.*
 
 ### Ledger & Auditing View
-![Review Ledger](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80)
+![Review Ledger](https://drive.google.com/file/d/18H9araG1hWKcw-WWWNzCLfrGgWDC5LmS/view?usp=sharing)
 *Interactive table detailing raw versus normalized $tCO_2e$, flags for suspicious values, and historical ranges.*
 
 ---
