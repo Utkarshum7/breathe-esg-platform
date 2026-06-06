@@ -217,7 +217,7 @@ To test the ingestion and analyst flow locally or in production:
 
 ### Dashboard Overview
 
-![Dashboard](docs/images/dashboard.png)
+![Dashboard](docs/images/BSI1.png)
 
 *Real-time overview of ESG metrics, emission summaries, approval status, and ingestion statistics.*
 
@@ -225,7 +225,7 @@ To test the ingestion and analyst flow locally or in production:
 
 ### Data Upload Center
 
-![Upload Center](docs/images/upload-center.png)
+![Upload Center](docs/images/BSI2.png)
 
 *Upload CSV and JSON datasets through a streamlined ingestion workflow with validation and processing status tracking.*
 
@@ -233,7 +233,7 @@ To test the ingestion and analyst flow locally or in production:
 
 ### Audit & Review Workflow
 
-![Audit Ledger](docs/images/audit-ledger.png)
+![Audit Ledger](docs/images/BSI3.png)
 
 *Review, approve, and track emission records with audit history and anomaly detection insights.*
 
